@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Input Example</title>
+    <script>
+      function processInput() {
+        var userInput = document.getElementById("user-input").value;
+        if (userInput === "hi") {
+          alert("hi,how can i help you");
+        } else if (userInput === "bye") {
+          alert("Goodbye,see you later!");
+        } else {
+          alert("I'm sorry, I don't understand your input.");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <label for="user-input">Enter your input:</label>
+    <input type="text" id="user-input">
+    <button onclick="processInput()">Submit</button>
+  </body>
+</html>
