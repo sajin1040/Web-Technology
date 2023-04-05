@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Uppercase First Letter</title>
+    <style>
+      /* Selects the first letter of the element and sets its text-transform property to uppercase */
+      ::first-letter {
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <p>hi this is the website.</p>
+  </body>
+</html>
