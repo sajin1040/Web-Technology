@@ -1,0 +1,116 @@
+//HTML CODE
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scientific Calculator</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="calculator">
+		<div class="display">
+			<input type="text" id="firstNumber" placeholder="Enter first number">
+			<input type="text" id="operator" placeholder="Enter operator (+, -, *, /, ^)">
+			<input type="text" id="secondNumber" placeholder="Enter second number">
+			<button onclick="calculate()">=</button>
+		</div>
+		<div class="result">
+			<p id="output"></p>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>
+
+//CSS CODE
+
+.calculator {
+	background-color: #eee;
+	padding: 10px;
+	border-radius: 10px;
+	width: 400px;
+	margin: 0 auto;
+}
+
+.display {
+	background-color: #fff;
+	padding: 10px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.display input[type="text"] {
+	padding: 5px;
+	margin-right: 10px;
+	border-radius: 5px;
+	border: none;
+}
+
+.display button {
+	background-color: #ddd;
+	color: #333;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 18px;
+}
+
+.display button:hover {
+	background-color: #ccc;
+}
+
+.result {
+	background-color: #fff;
+	padding: 10px;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.result p {
+	font-size: 24px;
+	margin: 0;
+}
+
+//JAVA SCRIPT
+
+function calculate() {
+	var firstNumber = Number(document.getElementById('firstNumber').value);
+	var operator = document.getElementById('operator').value;
+	var secondNumber = Number(document.getElementById('secondNumber').value);
+	var result = '';
+
+	if (isNaN(firstNumber) || isNaN(secondNumber)) {
+		result = 'Invalid input!';
+	} else {
+		switch (operator) {
+			case '+':
+				result = firstNumber + secondNumber;
+				break;
+			case '-':
+				result = firstNumber - secondNumber;
+				break;
+			case '*':
+				result = firstNumber * secondNumber;
+				break;
+			case '/':
+				result = firstNumber / secondNumber;
+				break;
+			case '^':
+				result = Math.pow(firstNumber, secondNumber);
+				break;
+			default:
+				result = 'Invalid operator!';
+				break;
+		}
+	}
+
+	document.getElementById('output').innerHTML = result;
+}
